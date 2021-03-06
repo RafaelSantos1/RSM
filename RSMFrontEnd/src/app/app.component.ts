@@ -12,11 +12,12 @@ export class AppComponent implements OnInit{
 
   listaPedidos: Array<PedidoModel>;
   valido : Boolean;
+  count : number = 0;
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.listaPedidos = new Array<PedidoModel>();
-    this.valido = false;
+    this.valido = true;
     this.getPedido();
   }
 
@@ -36,17 +37,40 @@ export class AppComponent implements OnInit{
 
   carregarPedidos() {
     return new Promise<void>((resolve, reject) => {
-      this.http.get('https://localhost:44339/ListaPedidos')
+      this.http.get('https://localhost:44339/Pedido/ListaPedidos')
         .subscribe(
           (data: any) => {    
             this.listaPedidos = data;   
             console.log(this.listaPedidos);
-            this.valido = true;
+            this.valido = false;
+            alert("XML CARREGADO COM SUCESSO!!")
             resolve();
           },
           error => reject(error)
         );
     });    
+  }
+
+  geradorJson(){
+    return new Promise<void>((resolve, reject) => {
+      this.http.post('https://localhost:44339/Pedido/GeraJson',this.listaPedidos)
+        .subscribe(
+          result => {             
+            alert("JSON GERADO COM SUCESSO NA PASTAR ARQUIVO DO PROJETO!!")
+            resolve();
+          },
+          error => reject(error)           
+          
+        );
+    });  
+  }
+
+  contador(){
+    console.log(this.count);
+    if(this.listaPedidos.length == this.count + 1)
+      this.count = 0;
+    else
+      this.count++;
   }
 
 }

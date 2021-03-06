@@ -32,7 +32,7 @@ namespace RSMBackEnd.Controllers
             {
 
                 //REALIZANDO LEITURA DO ARQUIVO XML E O TRANSFOMANDO EM UM OBJETO
-                string arquivo = "C:\\Users\\T-Gamer\\Documents\\RSM\\RSMBackEnd\\Arquivo\\pedidos.xml";              
+                string arquivo = "C:\\Users\\T-Gamer\\Documents\\RSM\\RSMBackEnd\\Arquivo\\pedidos.xml";
 
                 var resultado = new List<Pedido>();
                 XmlDocument xml = new XmlDocument();
@@ -44,24 +44,20 @@ namespace RSMBackEnd.Controllers
                     pedido.NomeLoja = xmlPedido["Cliente"].InnerText;
                     pedido.CodigoPedido = xmlPedido["Pedido"].InnerText;
                     pedido.Data = xmlPedido["Data"].InnerText;
-                    pedido.Total =decimal.Parse(xmlPedido["Total"].InnerText);
+                    pedido.Total = decimal.Parse(xmlPedido["Total"].InnerText);
                     pedido.Produtos = new List<Produto>();
-                    foreach(XmlNode xmlProduto in xmlPedido.LastChild)
+                    foreach (XmlNode xmlProduto in xmlPedido.LastChild)
                     {
                         Produto produto = new Produto();
                         produto.Codigo = xmlProduto["Codigo"].InnerText;
                         produto.Nome = xmlProduto["Nome"].InnerText;
-                        produto.Quantidade =int.Parse(xmlProduto["Quantidade"].InnerText);
-                        produto.Valor =decimal.Parse(xmlProduto["Valor"].InnerText);
+                        produto.Quantidade = int.Parse(xmlProduto["Quantidade"].InnerText);
+                        produto.Valor = decimal.Parse(xmlProduto["Valor"].InnerText);
 
                         pedido.Produtos.Add(produto);
-                    }                   
+                    }
                     resultado.Add(pedido);
                 }
-
-                //CRIANDO ARQUIVO JSON
-                string json = JsonConvert.SerializeObject(resultado);              
-                System.IO.File.WriteAllText(@"C:\\Users\\T-Gamer\\Documents\\RSM\\RSMBackEnd\\Arquivo\\pedidos.json", json);
 
                 return Ok(resultado);
             }
@@ -78,7 +74,7 @@ namespace RSMBackEnd.Controllers
             {
                 //REALIZANDO LEITURA DO ARQUIVO XML E O TRANSFOMANDO EM UM OBJETO
                 string arquivo = "C:\\Users\\T-Gamer\\Documents\\RSM\\RSMBackEnd\\Arquivo\\pedidos.xml";
-               
+
                 XmlDocument xml = new XmlDocument();
                 xml.Load(arquivo);
 
@@ -88,7 +84,7 @@ namespace RSMBackEnd.Controllers
                 Pedido pedido = new Pedido();
 
                 pedido.NomeLoja = xmlPedido["Cliente"].InnerText;
-                pedido.CodigoPedido = xmlPedido["Pedido"].InnerText;               
+                pedido.CodigoPedido = xmlPedido["Pedido"].InnerText;
                 pedido.Data = xmlPedido["Data"].InnerText;
                 pedido.Total = decimal.Parse(xmlPedido["Total"].InnerText);
                 pedido.Produtos = new List<Produto>();
@@ -104,6 +100,52 @@ namespace RSMBackEnd.Controllers
                 }
 
                 return Ok(pedido);
+            }
+            catch (System.Exception)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Arquivo não encontrado");
+            }
+        }
+
+        [HttpPost("GeraJson")]
+        public IActionResult GetJson([FromBody] Pedido[] ListaPedidos)
+        {
+            try
+            {
+
+                ////REALIZANDO LEITURA DO ARQUIVO XML E O TRANSFOMANDO EM UM OBJETO
+                //string arquivo = "C:\\Users\\T-Gamer\\Documents\\RSM\\RSMBackEnd\\Arquivo\\pedidos.xml";
+
+                //var resultado = new List<Pedido>();
+                //XmlDocument xml = new XmlDocument();
+                //xml.Load(arquivo);
+                //XmlNodeList xnmListaPedidos = xml.SelectNodes("/PedidosVendas/Pedido");
+                //foreach (XmlNode xmlPedido in xnmListaPedidos)
+                //{
+                //    Pedido pedido = new Pedido();
+                //    pedido.NomeLoja = xmlPedido["Cliente"].InnerText;
+                //    pedido.CodigoPedido = xmlPedido["Pedido"].InnerText;
+                //    pedido.Data = xmlPedido["Data"].InnerText;
+                //    pedido.Total = decimal.Parse(xmlPedido["Total"].InnerText);
+                //    pedido.Produtos = new List<Produto>();
+                //    foreach (XmlNode xmlProduto in xmlPedido.LastChild)
+                //    {
+                //        Produto produto = new Produto();
+                //        produto.Codigo = xmlProduto["Codigo"].InnerText;
+                //        produto.Nome = xmlProduto["Nome"].InnerText;
+                //        produto.Quantidade = int.Parse(xmlProduto["Quantidade"].InnerText);
+                //        produto.Valor = decimal.Parse(xmlProduto["Valor"].InnerText);
+
+                //        pedido.Produtos.Add(produto);
+                //    }
+                //    resultado.Add(pedido);
+                //}
+
+                //CRIANDO ARQUIVO JSON
+                string json = JsonConvert.SerializeObject(ListaPedidos);
+                System.IO.File.WriteAllText(@"C:\\Users\\T-Gamer\\Documents\\RSM\\RSMBackEnd\\Arquivo\\pedidos.json", json);
+
+                return Ok();
             }
             catch (System.Exception)
             {
@@ -139,9 +181,6 @@ namespace RSMBackEnd.Controllers
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Arquivo não encontrado");
             }
         }
-
-
-
 
     }
 }
