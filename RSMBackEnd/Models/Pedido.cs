@@ -9,7 +9,7 @@ namespace RSMBackEnd.Models
     {
        public string NomeLoja { get; set; }
        public string CodigoPedido { get; set; }
-       public DateTime Data { get; set; }
+       public string Data { get; set; }
        public decimal Total { get; set; }    
        public List<Produto> Produtos { get; set; }     
     }

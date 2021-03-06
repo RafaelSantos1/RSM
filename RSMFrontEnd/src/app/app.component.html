@@ -1,14 +1,51 @@
-<form>
-  <div class="form-group ">
-    <label for="exampleInputEmail1">Endereço de email</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
+<div class="principal">
+
+
+  <form #frm="ngForm" >
+    <div class="form-group" *ngFor="let pedido of listaPedidos">
+      <div class="form-group form-inline">
+        <label class="titulo" >Cliente</label>
+        <input type="text" class="form-control input-cliente" [(ngModel)]="pedido.nomeLoja" name="nome" readonly>
+      </div>
+
+      <div class="form-group form-inline">
+        <label class="titulo" >Pedido</label>
+        <input type="text" class="form-control input-outros" [(ngModel)]="pedido.codigoPedido" name="codigoPedido" readonly>
+
+        <label class="titulo-outros" >Data</label>
+        <input type="text" class="form-control input-outros"  [(ngModel)]="pedido.data" name="data" readonly>
+
+        <label class="titulo-outros" >Total</label>
+        <input type="text" class="form-control input-outros"  [(ngModel)]="pedido.total" name="data" readonly>
+      </div>
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Produto</th>
+            <th scope="col">Quantidade</th>
+            <th scope="col">Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let produto of pedido.produtos">
+          
+            <td>{{produto.nome}}</td>
+            <td>{{produto.quantidade}}</td>
+            <td>{{produto.valor}}</td>
+          </tr>     
+        </tbody>
+      </table>
+  
   </div>
-  <div class="form-group">
-    Senha
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
-  </div>
- 
-</form>
+  </form>
+
+
+
+<button type="submit"  class="btn btn-primary">Carregar XML</button>
+<button type="submit" class="btn btn-primary">Gerar arquivo Json</button>
+<button type="submit" [disabled]="this.valido" class="btn btn-primary">Proximo Registo</button>
+
 
 
 <!-- Botão para acionar modal -->

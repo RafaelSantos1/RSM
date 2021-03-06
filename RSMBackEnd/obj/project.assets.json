@@ -633,11 +633,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\T-Gamer\\Desktop\\Nova pasta\\RSMBackEnd\\RSMBackEnd.csproj",
+      "projectUniqueName": "C:\\Users\\T-Gamer\\Documents\\RSM\\RSMBackEnd\\RSMBackEnd.csproj",
       "projectName": "RSMBackEnd",
-      "projectPath": "C:\\Users\\T-Gamer\\Desktop\\Nova pasta\\RSMBackEnd\\RSMBackEnd.csproj",
+      "projectPath": "C:\\Users\\T-Gamer\\Documents\\RSM\\RSMBackEnd\\RSMBackEnd.csproj",
       "packagesPath": "C:\\Users\\T-Gamer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\T-Gamer\\Desktop\\Nova pasta\\RSMBackEnd\\obj\\",
+      "outputPath": "C:\\Users\\T-Gamer\\Documents\\RSM\\RSMBackEnd\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

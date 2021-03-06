@@ -10,6 +10,7 @@ using System.IO;
 using Microsoft.Extensions.Logging;
 using System.Text.Json;
 using Newtonsoft.Json;
+using System.Globalization;
 
 namespace RSMBackEnd.Controllers
 {
@@ -31,7 +32,7 @@ namespace RSMBackEnd.Controllers
             {
 
                 //REALIZANDO LEITURA DO ARQUIVO XML E O TRANSFOMANDO EM UM OBJETO
-                string arquivo = "C:\\Users\\T-Gamer\\Desktop\\Nova pasta\\RSMBackEnd\\Arquivo\\pedidos.xml";              
+                string arquivo = "C:\\Users\\T-Gamer\\Documents\\RSM\\RSMBackEnd\\Arquivo\\pedidos.xml";              
 
                 var resultado = new List<Pedido>();
                 XmlDocument xml = new XmlDocument();
@@ -42,7 +43,7 @@ namespace RSMBackEnd.Controllers
                     Pedido pedido = new Pedido();
                     pedido.NomeLoja = xmlPedido["Cliente"].InnerText;
                     pedido.CodigoPedido = xmlPedido["Pedido"].InnerText;
-                    pedido.Data =DateTime.Parse(xmlPedido["Data"].InnerText);
+                    pedido.Data = xmlPedido["Data"].InnerText;
                     pedido.Total =decimal.Parse(xmlPedido["Total"].InnerText);
                     pedido.Produtos = new List<Produto>();
                     foreach(XmlNode xmlProduto in xmlPedido.LastChild)
@@ -60,7 +61,7 @@ namespace RSMBackEnd.Controllers
 
                 //CRIANDO ARQUIVO JSON
                 string json = JsonConvert.SerializeObject(resultado);              
-                System.IO.File.WriteAllText(@"C:\\Users\\T-Gamer\\Desktop\\Nova pasta\\RSMBackEnd\\Arquivo\\pedidos.json", json);
+                System.IO.File.WriteAllText(@"C:\\Users\\T-Gamer\\Documents\\RSM\\RSMBackEnd\\Arquivo\\pedidos.json", json);
 
                 return Ok(resultado);
             }
@@ -70,13 +71,13 @@ namespace RSMBackEnd.Controllers
             }
         }
 
-        [HttpGet("Pedido")]
+        [HttpGet()]
         public IActionResult GetPedido()
         {
             try
             {
                 //REALIZANDO LEITURA DO ARQUIVO XML E O TRANSFOMANDO EM UM OBJETO
-                string arquivo = "C:\\Users\\T-Gamer\\Desktop\\Nova pasta\\RSMBackEnd\\Arquivo\\pedidos.xml";
+                string arquivo = "C:\\Users\\T-Gamer\\Documents\\RSM\\RSMBackEnd\\Arquivo\\pedidos.xml";
                
                 XmlDocument xml = new XmlDocument();
                 xml.Load(arquivo);
@@ -87,8 +88,8 @@ namespace RSMBackEnd.Controllers
                 Pedido pedido = new Pedido();
 
                 pedido.NomeLoja = xmlPedido["Cliente"].InnerText;
-                pedido.CodigoPedido = xmlPedido["Pedido"].InnerText;
-                pedido.Data = DateTime.Parse(xmlPedido["Data"].InnerText);
+                pedido.CodigoPedido = xmlPedido["Pedido"].InnerText;               
+                pedido.Data = xmlPedido["Data"].InnerText;
                 pedido.Total = decimal.Parse(xmlPedido["Total"].InnerText);
                 pedido.Produtos = new List<Produto>();
                 foreach (XmlNode xmlProduto in xmlPedido.LastChild)
@@ -115,22 +116,21 @@ namespace RSMBackEnd.Controllers
         {
             try
             {
-
+                //DateTime thisDate = DateTime.Parse(xmlPedido["Data"].InnerText);
+                //CultureInfo culture = new CultureInfo("pt-BR");
                 //REALIZANDO LEITURA DO ARQUIVO XML E O TRANSFOMANDO EM UM OBJETO
                 List<Pedido> ListaPedido = new List<Pedido>();
                 string json = "";
-                using (StreamReader r = new StreamReader("C:\\Users\\T-Gamer\\Desktop\\Nova pasta\\RSMBackEnd\\Arquivo\\pedidos.json"))
+                using (StreamReader r = new StreamReader("C:\\Users\\T-Gamer\\Documents\\RSM\\RSMBackEnd\\Arquivo\\pedidos.json"))
                 {
                     json = r.ReadToEnd();
                     ListaPedido = JsonConvert.DeserializeObject<List<Pedido>>(json);
                 }
 
-
-
                 ListaPedido.Add(pedido);
                 //CRIANDO ARQUIVO JSON
                  json = JsonConvert.SerializeObject(ListaPedido);
-                System.IO.File.WriteAllText(@"C:\\Users\\T-Gamer\\Desktop\\Nova pasta\\RSMBackEnd\\Arquivo\\pedidos.json", json);
+                System.IO.File.WriteAllText(@"C:\\Users\\T-Gamer\\Documents\\RSM\\RSMBackEnd\\Arquivo\\pedidos.json", json);
 
                 return Ok(ListaPedido);
             }

@@ -37,3 +37,42 @@ C:\Users\T-Gamer\Desktop\Nova pasta\RSMBackEnd\obj\Debug\net5.0\RSMBackEnd.genru
 C:\Users\T-Gamer\Desktop\Nova pasta\RSMBackEnd\obj\Debug\net5.0\RSMBackEnd.csprojAssemblyReference.cache
 C:\Users\T-Gamer\Desktop\Nova pasta\RSMBackEnd\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\T-Gamer\Desktop\Nova pasta\RSMBackEnd\bin\Debug\net5.0\Arquivo\pedidos.json
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\bin\Debug\net5.0\appsettings.json
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\bin\Debug\net5.0\Arquivo\pedidos.json
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\bin\Debug\net5.0\RSMBackEnd.exe
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\bin\Debug\net5.0\RSMBackEnd.deps.json
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\bin\Debug\net5.0\RSMBackEnd.runtimeconfig.json
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\bin\Debug\net5.0\RSMBackEnd.runtimeconfig.dev.json
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\bin\Debug\net5.0\RSMBackEnd.dll
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\bin\Debug\net5.0\ref\RSMBackEnd.dll
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\bin\Debug\net5.0\RSMBackEnd.pdb
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\obj\Debug\net5.0\RSMBackEnd.csprojAssemblyReference.cache
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\obj\Debug\net5.0\RSMBackEnd.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\obj\Debug\net5.0\RSMBackEnd.AssemblyInfoInputs.cache
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\obj\Debug\net5.0\RSMBackEnd.AssemblyInfo.cs
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\obj\Debug\net5.0\RSMBackEnd.csproj.CoreCompileInputs.cache
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\obj\Debug\net5.0\RSMBackEnd.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\obj\Debug\net5.0\RSMBackEnd.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\obj\Debug\net5.0\staticwebassets\RSMBackEnd.StaticWebAssets.Manifest.cache
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\obj\Debug\net5.0\staticwebassets\RSMBackEnd.StaticWebAssets.xml
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\obj\Debug\net5.0\scopedcss\bundle\RSMBackEnd.styles.css
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\obj\Debug\net5.0\RSMBackEnd.RazorTargetAssemblyInfo.cache
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\obj\Debug\net5.0\RSMBackEnd.csproj.CopyComplete
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\obj\Debug\net5.0\RSMBackEnd.dll
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\obj\Debug\net5.0\ref\RSMBackEnd.dll
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\obj\Debug\net5.0\RSMBackEnd.pdb
+C:\Users\T-Gamer\Documents\RSM\RSMBackEnd\obj\Debug\net5.0\RSMBackEnd.genruntimeconfig.cache
