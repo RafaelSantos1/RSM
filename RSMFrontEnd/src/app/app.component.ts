@@ -1,3 +1,4 @@
+import { ProdutoModel } from './Models/produto.model';
 import { PedidoModel } from './Models/pedido.model';
 import { HttpClient } from '@angular/common/http';
 import { OnInit, ViewChild } from '@angular/core';
@@ -13,16 +14,46 @@ export class AppComponent implements OnInit{
   @ViewChild('lgModal') public lgModal: ModalDirective;
   bsModalRef: BsModalRef;
   listaPedidos: Array<PedidoModel>;
+  pedido: PedidoModel;
+  teste: any;
+  produto: ProdutoModel;
+  produtos: Array<ProdutoModel>;
   valido : Boolean;
   count : number = 0;
+  isCollapsed = false;
+  indice : number = 0;
+
   constructor(private http: HttpClient,
               private modalService: BsModalService)
   { }
 
   ngOnInit() {
-    this.listaPedidos = new Array<PedidoModel>();
+    this.listaPedidos = new Array<PedidoModel>();  
+    this.produtos = new Array<ProdutoModel>();  
+    this.pedido = new PedidoModel();
+    this.produto = new ProdutoModel();
     this.valido = true;
     this.getPedido();
+    this.adicionarProduto();
+  }
+
+
+  
+
+  adicionarProduto(){
+   
+    this.produtos.push(new ProdutoModel());
+    this.indice++;
+  }
+
+  salvarPedido(){
+    this.pedido.produtos = this.produtos;
+    this.teste = this.pedido;
+    this.listaPedidos.push(this.teste);
+    this.pedido = new PedidoModel();
+    this.produtos = new Array<ProdutoModel>();
+    this.produtos.push(new ProdutoModel());
+    alert("Sucesso novo pedido Registrado!!!")
   }
 
   getPedido() {
@@ -55,6 +86,7 @@ export class AppComponent implements OnInit{
   }
 
   geradorJson(){
+    console.log(this.listaPedidos);
     return new Promise<void>((resolve, reject) => {
       this.http.post('https://localhost:44339/Pedido/GeraJson',this.listaPedidos)
         .subscribe(
