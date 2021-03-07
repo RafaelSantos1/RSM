@@ -15,7 +15,7 @@ export class AppComponent implements OnInit{
   bsModalRef: BsModalRef;
   listaPedidos: Array<PedidoModel>;
   pedido: PedidoModel;
-  teste: any;
+  auxiliar: any;
   produto: ProdutoModel;
   produtos: Array<ProdutoModel>;
   valido : Boolean;
@@ -44,8 +44,8 @@ export class AppComponent implements OnInit{
 
   salvarPedido(){
     this.pedido.produtos = this.produtos;
-    this.teste = this.pedido;
-    this.listaPedidos.push(this.teste);
+    this.auxiliar = this.pedido;
+    this.listaPedidos.push(this.auxiliar);
     this.pedido = new PedidoModel();
     this.produtos = new Array<ProdutoModel>();
     this.produtos.push(new ProdutoModel());
@@ -102,5 +102,6 @@ export class AppComponent implements OnInit{
     else
       this.count++;
   }
+
 
 }

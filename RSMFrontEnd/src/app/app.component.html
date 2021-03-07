@@ -51,18 +51,18 @@
 <div class="card card-block card-header" id="collapseBasic" [collapse]="isCollapsed" [isAnimated]="true">
   <div class="form-group form-inline">
     <label class="titulo" >Cliente</label>
-    <input type="text" class="form-control input-cliente" [(ngModel)]="pedido.nomeLoja" name="nomeLoja" >
+    <input type="text" class="form-control input-cliente" [(ngModel)]="pedido.nomeLoja" maxlength="99" name="nomeLoja" >
   </div> 
 
   <div class="form-group form-inline">
     <label class="titulo" >Pedido</label>
-    <input type="text" class="form-control input-outros" [(ngModel)]="pedido.codigoPedido" name="codigoPedido" >
+    <input type="text" class="form-control input-outros" mask="99999999" [(ngModel)]="pedido.codigoPedido" name="codigoPedido" >
 
     <label class="titulo-outros" >Data</label>
-    <input type="text" class="form-control input-outros"  [(ngModel)]="pedido.data" name="data" >
+    <input type="text" class="form-control input-outros" mask="00/00/0000" [(ngModel)]="pedido.data" name="data" >
 
-    <label class="titulo-outros" >Total</label>
-    <input type="text" class="form-control input-outros"  [(ngModel)]="pedido.total" name="data" >
+    <label class="titulo-outros" >Preço</label>
+    <input type="text" class="form-control input-outros" mask="A{4}" [(ngModel)]="pedido.total" name="total" >
 
   </div>
 <hr>
@@ -72,16 +72,16 @@
     <div class="form-group div-produto">
     
       <label class="titulo" >Código</label>
-      <input type="text" class="form-control input-collapse" [(ngModel)]="produto.codigo" name="codigo" >
+      <input type="text" class="form-control input-collapse" maxlength="8" [(ngModel)]="produto.codigo" name="codigo" >
   
       <label class="titulo-outros" >Nome</label>
-      <input type="text" class="form-control input-collapse" [(ngModel)]="produto.nome" name="nome" >
+      <input type="text" class="form-control input-collapse" maxlength="100" [(ngModel)]="produto.nome" name="nome" >
   
       <label class="titulo-outros" >Quantidade</label>
-      <input type="text" class="form-control input-collapse"  [(ngModel)]="produto.quantidade" name="quantidade" >
+      <input type="text" class="form-control input-collapse" mask="999999999" [(ngModel)]="produto.quantidade" name="quantidade" >
   
       <label class="titulo-outros" >Total</label>
-      <input type="text" class="form-control input-collapse"  [(ngModel)]="produto.valor" name="valor" >
+      <input type="text" class="form-control input-collapse" mask="99999.0000,00000000" [(ngModel)]="produto.valor" name="valor" >
     </div> 
     
   </div>
