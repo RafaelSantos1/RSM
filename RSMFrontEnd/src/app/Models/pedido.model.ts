@@ -1,4 +1,5 @@
 import { ProdutoModel } from "./produto.model";
+
 export class PedidoModel{
     nomeLoja: string;
     codigoPedido: string;

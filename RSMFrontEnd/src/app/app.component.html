@@ -2,7 +2,7 @@
   <form #frm="ngForm" >
       <div class="form-group form-inline">
         <label class="titulo" >Cliente</label>
-        <input type="text" class="form-control input-cliente" [(ngModel)]="listaPedidos[count].nomeLoja" name="nome" readonly>
+        <input type="text" class="form-control input-cliente" [(ngModel)]="listaPedidos[count].nomeLoja" name="nomeLoja" readonly>
       </div>
 
       <div class="form-group form-inline">
@@ -46,11 +46,11 @@
 
 
 <!-- Botão para acionar modal -->
-<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">
   Abrir modal de demonstração
-</button> -->
+</button>
 
-<!-- Modal
+<!-- Modal -->
 <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -69,4 +69,4 @@
       </div>
     </div>
   </div>
-</div> -->
+</div>

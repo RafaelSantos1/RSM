@@ -27,7 +27,6 @@ export class AppComponent implements OnInit{
         .subscribe(
           (data: any) => {    
             this.listaPedidos.push(data);   
-            console.log(this.listaPedidos);
             resolve();
           },
           error => reject(error)
