@@ -20,7 +20,7 @@ export class AppComponent implements OnInit{
   produtos: Array<ProdutoModel>;
   valido : Boolean;
   count : number = 0;
-  isCollapsed = false;
+  isCollapsed = true;
   indice : number = 0;
 
   constructor(private http: HttpClient,
@@ -37,12 +37,8 @@ export class AppComponent implements OnInit{
     this.adicionarProduto();
   }
 
-
-  
-
   adicionarProduto(){
-   
-    this.produtos.push(new ProdutoModel());
+       this.produtos.push(new ProdutoModel());
     this.indice++;
   }
 
@@ -101,7 +97,6 @@ export class AppComponent implements OnInit{
   }
 
   contador(){
-    console.log(this.count);
     if(this.listaPedidos.length == this.count + 1)
       this.count = 0;
     else
