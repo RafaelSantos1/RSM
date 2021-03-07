@@ -1,8 +1,8 @@
 import { PedidoModel } from './Models/pedido.model';
 import { HttpClient } from '@angular/common/http';
-import { OnInit } from '@angular/core';
+import { OnInit, ViewChild } from '@angular/core';
 import { Component } from '@angular/core';
-
+import { BsModalService, BsModalRef, ModalDirective } from 'ngx-bootstrap/modal';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,10 +10,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent implements OnInit{
 
+  @ViewChild('lgModal') public lgModal: ModalDirective;
+  bsModalRef: BsModalRef;
   listaPedidos: Array<PedidoModel>;
   valido : Boolean;
   count : number = 0;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+              private modalService: BsModalService)
+  { }
 
   ngOnInit() {
     this.listaPedidos = new Array<PedidoModel>();

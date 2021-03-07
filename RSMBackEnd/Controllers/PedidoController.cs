@@ -112,35 +112,6 @@ namespace RSMBackEnd.Controllers
         {
             try
             {
-
-                ////REALIZANDO LEITURA DO ARQUIVO XML E O TRANSFOMANDO EM UM OBJETO
-                //string arquivo = "C:\\Users\\T-Gamer\\Documents\\RSM\\RSMBackEnd\\Arquivo\\pedidos.xml";
-
-                //var resultado = new List<Pedido>();
-                //XmlDocument xml = new XmlDocument();
-                //xml.Load(arquivo);
-                //XmlNodeList xnmListaPedidos = xml.SelectNodes("/PedidosVendas/Pedido");
-                //foreach (XmlNode xmlPedido in xnmListaPedidos)
-                //{
-                //    Pedido pedido = new Pedido();
-                //    pedido.NomeLoja = xmlPedido["Cliente"].InnerText;
-                //    pedido.CodigoPedido = xmlPedido["Pedido"].InnerText;
-                //    pedido.Data = xmlPedido["Data"].InnerText;
-                //    pedido.Total = decimal.Parse(xmlPedido["Total"].InnerText);
-                //    pedido.Produtos = new List<Produto>();
-                //    foreach (XmlNode xmlProduto in xmlPedido.LastChild)
-                //    {
-                //        Produto produto = new Produto();
-                //        produto.Codigo = xmlProduto["Codigo"].InnerText;
-                //        produto.Nome = xmlProduto["Nome"].InnerText;
-                //        produto.Quantidade = int.Parse(xmlProduto["Quantidade"].InnerText);
-                //        produto.Valor = decimal.Parse(xmlProduto["Valor"].InnerText);
-
-                //        pedido.Produtos.Add(produto);
-                //    }
-                //    resultado.Add(pedido);
-                //}
-
                 //CRIANDO ARQUIVO JSON
                 string json = JsonConvert.SerializeObject(ListaPedidos);
                 System.IO.File.WriteAllText(@"C:\\Users\\T-Gamer\\Documents\\RSM\\RSMBackEnd\\Arquivo\\pedidos.json", json);
@@ -158,9 +129,6 @@ namespace RSMBackEnd.Controllers
         {
             try
             {
-                //DateTime thisDate = DateTime.Parse(xmlPedido["Data"].InnerText);
-                //CultureInfo culture = new CultureInfo("pt-BR");
-                //REALIZANDO LEITURA DO ARQUIVO XML E O TRANSFOMANDO EM UM OBJETO
                 List<Pedido> ListaPedido = new List<Pedido>();
                 string json = "";
                 using (StreamReader r = new StreamReader("C:\\Users\\T-Gamer\\Documents\\RSM\\RSMBackEnd\\Arquivo\\pedidos.json"))
